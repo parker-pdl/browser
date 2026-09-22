@@ -1,62 +1,28 @@
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
-.. _metasearch engine: https://en.wikipedia.org/wiki/Metasearch_engine
-.. _Installation guide: https://docs.searxng.org/admin/installation.html
-.. _Configuration guide: https://docs.searxng.org/admin/settings/index.html
-.. _CONTRIBUTING: https://github.com/searxng/searxng/blob/master/CONTRIBUTING.rst
-.. _LICENSE: https://github.com/searxng/searxng/blob/master/LICENSE
+Parker Data Link Browser
+=========================
 
-.. figure:: https://raw.githubusercontent.com/searxng/searxng/master/client/simple/src/brand/searxng.svg
-   :target: https://searxng.org
-   :alt: SearXNG
-   :width: 512px
-
-
-SearXNG is a `metasearch engine`_. Users are neither tracked nor profiled.
-
-.. image:: https://img.shields.io/badge/organization-3050ff?style=flat-square&logo=searxng&logoColor=fff&cacheSeconds=86400
-   :target: https://github.com/searxng
-   :alt: Organization
-
-.. image:: https://img.shields.io/badge/documentation-3050ff?style=flat-square&logo=readthedocs&logoColor=fff&cacheSeconds=86400
-   :target: https://docs.searxng.org
-   :alt: Documentation
-
-.. image:: https://img.shields.io/github/license/searxng/searxng?style=flat-square&label=license&color=3050ff&cacheSeconds=86400
-   :target: https://github.com/searxng/searxng/blob/master/LICENSE
-   :alt: License
-
-.. image:: https://img.shields.io/github/commit-activity/y/searxng/searxng/master?style=flat-square&label=commits&color=3050ff&cacheSeconds=3600
-   :target: https://github.com/searxng/searxng/commits/master/
-   :alt: Commits
-
-.. image:: https://img.shields.io/weblate/progress/searxng?server=https%3A%2F%2Ftranslate.codeberg.org&style=flat-square&label=translated&color=3050ff&cacheSeconds=86400
-   :target: https://translate.codeberg.org/projects/searxng/
-   :alt: Translated
+Parker Data Link Browser is a private metasearch and streaming portal built
+for Parker Data Link LLC. It lets users search the web and jump straight to
+our curated set of streaming channels from a single page, without being
+tracked or profiled.
 
 Setup
 =====
 
-To install SearXNG, see `Installation guide`_.
-
-To fine-tune SearXNG, see `Configuration guide`_.
-
-Further information on *how-to* can be found `here <https://docs.searxng.org/admin/index.html>`_.
-
-Connect
-=======
-
-If you have questions or want to connect with others in the community:
-
-- `#searxng:matrix.org <https://matrix.to/#/#searxng:matrix.org>`_
+Deployment and configuration are managed internally by Parker Data Link LLC.
 
 Contributing
 ============
 
-See CONTRIBUTING_ for more details.
+This is a private, internal project for Parker Data Link LLC. Changes are
+managed by the PDL team.
 
 License
 =======
 
-This project is licensed under the GNU Affero General Public License (AGPL-3.0).
-See LICENSE_ for more details.
+This project is licensed under the GNU Affero General Public License
+(AGPL-3.0). It is built on top of open-source, self-hosted search
+technology, used and modified here under the terms of that license. See
+LICENSE for more details.

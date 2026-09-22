@@ -1,0 +1,75 @@
+{% from 'simple/icons.html' import icon_big %}
+{#-
+  Parker Data Link app showcase.
+
+  Category-style buttons that toggle a panel of our own apps.  Built on
+  <details>/<summary> so the toggle works without JavaScript.
+
+  Google Play links are real, verified store URLs pulled directly from the
+  Parker Data Link developer account. Amazon is shown as a "(soon)"
+  placeholder because that listing doesn't exist yet.
+-#}
+{%- set app_sections = [
+  {
+    'id': 'net_tools',
+    'name': _('Net Tools'),
+    'icon': 'construct',
+    'apps': [
+      ('Privacy Picture', _('Strips hidden data from your photos before you share them.'), 'https://play.google.com/store/apps/details?id=link.parkerdata.privacypicture'),
+      ('Secret Vault', _('Locks away private files and notes behind a passcode.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.encrypt'),
+      ('Sub Tracker', _('Keeps tabs on your subscriptions so nothing renews by surprise.'), 'https://play.google.com/store/apps/details?id=link.parkerdata.subtracker'),
+      ('Parker Weather', _('Simple, clean local forecasts with no clutter or ads.'), 'https://play.google.com/store/apps/details?id=link.parkerdata.weather.twa'),
+      ('Collage Maker - Photo Grid', _('Make a photo collage in seconds. Pick photos, pick a look, save.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.collagemaker'),
+    ],
+  },
+  {
+    'id': 'games',
+    'name': _('Games'),
+    'icon': 'game-controller',
+    'apps': [
+      ('Ghost Match', _('Match spooky ghosts in this family-friendly Halloween puzzle game.'), 'https://play.google.com/store/apps/details?id=link.parkerdata.ghostmatch'),
+      ('Horror 4 Drop', _('A ghost-themed twist on classic Connect 4.'), 'https://play.google.com/store/apps/details?id=com.horror_drop'),
+      ('Horror Solitaire', _('Classic Solitaire with jump scares, drifting fog and eerie music.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.horrorsolitaire'),
+      ('Quiz Game', _('800+ movie trivia questions. Beat the clock.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.quizgame'),
+      ('Retro Games - Parker Data Link', _('Ten arcade classics rebuilt from scratch, all in one app.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.retrogames'),
+      ('Comic Book Page Maker', _('Create your own comic book pages.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.comicpage'),
+      ('Halloween Horror Countdown', _('Count down to Halloween with creepy quotes, films and sounds.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.halloweencountdown'),
+      ('Horror Wallpapers 4K: Scary', _('22 free horror wallpapers in HD. No paywall, no unlocks.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.horrorwallpaper'),
+    ],
+  },
+  {
+    'id': 'streaming_channels',
+    'name': _('Streaming Channels'),
+    'icon': 'tv',
+    'apps': [
+      ('Classic Cartoons', _('298 classic animated cartoon shorts, streamed free.'), 'https://play.google.com/store/apps/details?id=dev.workers.parkerdatalinktv.classic_cartoons_app.twa'),
+      ('Classic Movies & TV', _('327 classic films, cartoons and TV shows. Public domain.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.classicmoviestv'),
+      ('Classic TV Vault', _('1,000+ classic TV episodes across 34 shows.'), 'https://play.google.com/store/apps/details?id=com.parkerdatalink.classictvvault'),
+      ('Horror Movies Free: Classics', _('Over 100 horror and sci-fi classics, streaming free.'), 'https://play.google.com/store/apps/details?id=dev.workers.parkerdatalinktv.classic_horror_movies_app.twa'),
+    ],
+  },
+] -%}
+<div class="app_sections">{{- '' -}}
+  {%- for section in app_sections -%}
+  <details class="app_section" id="app_section_{{ section.id }}" name="pdl_app_section">{{- '' -}}
+    <summary class="app_section_button">{{- '' -}}
+      {{- icon_big(section.icon) -}}
+      <span class="app_section_name">{{- section.name -}}</span>{{- '' -}}
+    </summary>{{- '' -}}
+    <div class="app_section_panel">{{- '' -}}
+      <ul class="app_list">{{- '' -}}
+        {%- for app_name, app_description, app_play_url in section.apps -%}
+        <li class="app_card">{{- '' -}}
+          <p class="app_name">{{- app_name -}}</p>{{- '' -}}
+          <p class="app_description">{{- app_description -}}</p>{{- '' -}}
+          <p class="app_stores">{{- '' -}}
+            <a class="app_store_link" href="{{ app_play_url }}" target="_blank" rel="noopener">{{- _('Google Play') -}}</a>{{- '' -}}
+            <span class="app_store_link app_store_soon">{{- _('Amazon (soon)') -}}</span>{{- '' -}}
+          </p>{{- '' -}}
+        </li>{{- '' -}}
+        {%- endfor -%}
+      </ul>{{- '' -}}
+    </div>{{- '' -}}
+  </details>{{- '' -}}
+  {%- endfor -%}
+</div>

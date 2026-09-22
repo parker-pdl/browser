@@ -1,0 +1,194 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+//
+// Parker Data Link additions: the app showcase sections (Net Tools, Games)
+// and the Support Us / Go Pro calls to action.
+//
+// Colours come from the shared custom properties in definitions.less, so both
+// the light and the dark themes are covered without duplicating values here.
+//
+
+// --- Net Tools / Games ------------------------------------------------------
+
+.app_sections {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 64rem;
+  margin: 0.5rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.app_section {
+  flex: 0 0 auto;
+}
+
+// An open section claims the whole row, so its panel gets the full width to
+// lay out in and the other button wraps to the next line instead of being
+// overlapped.
+.app_section[open] {
+  flex: 1 1 100%;
+}
+
+.app_section_button {
+  .disable-user-select;
+  .rounded-corners-tiny;
+
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  // an open section spans the whole row, but its button stays button-sized
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  background: var(--color-show-btn-background);
+  color: var(--color-show-btn-font);
+  border: 1px solid var(--color-categories-item-border-selected);
+  cursor: pointer;
+  white-space: nowrap;
+  list-style: none;
+
+  // hide the default disclosure triangle
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  svg {
+    font-size: 1.1em;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-btn-background);
+    color: var(--color-btn-font);
+  }
+}
+
+.app_section[open] > .app_section_button {
+  background: var(--color-btn-background);
+  color: var(--color-btn-font);
+}
+
+.app_section_panel {
+  .rounded-corners-tiny;
+
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: var(--color-result-background);
+  border: 1px solid var(--color-result-border);
+  color: var(--color-base-font);
+  text-align: left;
+}
+
+.app_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app_card {
+  .rounded-corners-tiny;
+
+  padding: 0.6rem 0.75rem;
+  background: var(--color-base-background);
+  border: 1px solid var(--color-result-border);
+}
+
+.app_name {
+  margin: 0 0 0.2rem 0;
+  font-weight: bold;
+  color: var(--color-result-link-font);
+}
+
+.app_description {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.9em;
+  color: var(--color-result-engines-font);
+}
+
+.app_stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.app_store_link {
+  .rounded-corners-tiny;
+
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8em;
+  white-space: nowrap;
+  background: var(--color-show-btn-background);
+  color: var(--color-show-btn-font);
+  border: 1px solid var(--color-result-border);
+}
+
+a.app_store_link {
+  &:link,
+  &:visited {
+    color: var(--color-show-btn-font);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-btn-background);
+    color: var(--color-btn-font);
+  }
+}
+
+// Samsung is not live yet: shown as plain text, not a link.
+.app_store_soon {
+  background: none;
+  color: var(--color-result-publishdate-font);
+  cursor: default;
+}
+
+// --- Support Us / Go Pro ----------------------------------------------------
+
+#links_on_top a {
+  &.link_on_top_support,
+  &.link_on_top_pro {
+    .rounded-corners-tiny;
+
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--color-categories-item-border-selected);
+  }
+
+  &.link_on_top_support {
+    background: var(--color-show-btn-background);
+
+    &,
+    &:link *,
+    &:hover *,
+    &:visited *,
+    &:active * {
+      color: var(--color-show-btn-font);
+    }
+  }
+
+  &.link_on_top_pro {
+    background: var(--color-btn-background);
+
+    &,
+    &:link *,
+    &:hover *,
+    &:visited *,
+    &:active * {
+      color: var(--color-btn-font);
+    }
+  }
+}
+
+// The note under the search box on the front page.
+.no_ads_note {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.85em;
+  color: var(--color-result-publishdate-font);
+  text-align: center;
+}

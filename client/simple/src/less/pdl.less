@@ -188,7 +188,22 @@ a.app_store_link {
 // The note under the search box on the front page.
 .no_ads_note {
   margin: 0.75rem 0 0 0;
-  font-size: 0.85em;
-  color: var(--color-result-publishdate-font);
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--color-base-font);
   text-align: center;
+}
+
+.no_ads_donate_link {
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-result-link-font);
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+  }
 }

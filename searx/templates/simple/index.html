@@ -4,7 +4,7 @@
 <div class="index">
     <div class="title"><h1>Parker Data Link Browser</h1></div>
     {% include 'simple/simple_search.html' %}
-    <p class="no_ads_note">{{ _('No ads on search results. Donations and Pro keep it that way.') }}</p>
+    <p class="no_ads_note">{{ _('No ads on our search results. Help keep it that way with') }} <a href="{{ donation_url }}" class="no_ads_donate_link">{{ _('Donations') }}</a>.</p>
     {% include 'simple/app_sections.html' %}
 </div>
 {% endblock %}

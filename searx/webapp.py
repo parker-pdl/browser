@@ -1181,6 +1181,25 @@ Disallow: /*?*q=*
     )
 
 
+@app.route('/.well-known/assetlinks.json', methods=['GET'])
+def assetlinks():
+    # Digital Asset Links: lets the Android app (Trusted Web Activity)
+    # open this site full-screen with no browser address bar.
+    return Response(
+        """[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "link.parkerdata.search.twa",
+    "sha256_cert_fingerprints": [
+      "9B:9A:85:19:86:6A:BF:70:5D:37:F7:BC:CC:80:11:CD:49:E1:DF:FB:DF:5A:44:48:94:49:79:D0:F6:24:71:A4"
+    ]
+  }
+}]""",
+        mimetype='application/json',
+    )
+
+
 @app.route('/opensearch.xml', methods=['GET'])
 def opensearch():
     method = sxng_request.preferences.get_value('method')
